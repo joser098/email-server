@@ -1,0 +1,22 @@
+{
+  "name": "email-server",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "dev": "nodemon index.js",
+    "test": "npx jest --detectOpenHandles"
+  },
+  "author": "josejaramillo",
+  "license": "ISC",
+  "dependencies": {
+    "@aws-sdk/client-ses": "^3.782.0",
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.7",
+    "express": "^5.1.0"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.9"
+  }
+}
