@@ -10,12 +10,11 @@ const {
 const connectEmailsHandler = async (req, res) => {
   try {
     const { email, template, userData } = req.body;
-    console.log(req)
-    
+
     if (!email) {
       return res.status(400).json({ message: "Email is required" });
     }
-    const templateGenerated = connectTemplates[template]("John", "Doe")
+    const templateGenerated = connectTemplates[template](userData.name, userData.last_name)
 
     const sending = await sendEmailBySES(REGION,CONNECT_AWS_SES_ACCESS_KEY, CONNECT_AWS_SES_SECRET_ACCESS_KEY, email, CONNECT_AWS_SES_FROM_EMAIL, "Connect", templateGenerated);
     console.log(sending);
